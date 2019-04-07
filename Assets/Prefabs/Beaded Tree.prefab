@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8400000245528413722}
   - component: {fileID: 2276695249503173805}
   m_Layer: 0
-  m_Name: OptimizedTree 1
+  m_Name: Beaded Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
