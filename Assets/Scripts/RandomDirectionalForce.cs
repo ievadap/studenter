@@ -21,7 +21,7 @@ public class RandomDirectionalForce : MonoBehaviour
     void ApplyRandomForce()
     {
         gameObject
-        .GetComponent<Rigidbody>()
-        .AddForce(new Vector3(Random.Range(-forceRange, forceRange), Random.Range(-forceRange, forceRange), Random.Range(-forceRange, forceRange)));
+            .GetComponent<Rigidbody>()
+            .AddForce(new Vector3(Random.Range(-forceRange, forceRange), Random.Range(-forceRange, forceRange), Random.Range(-forceRange, forceRange)));
     }
 }

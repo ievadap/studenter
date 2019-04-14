@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 [RequireComponent(typeof(ParticleSystem))]
 
-public class TriggeredParticleEmission : MonoBehaviour
+public class CollisionParticleEmission : MonoBehaviour
 {
-    private ParticleSystem particleSystem;
+    private ParticleSystem particles;
 
     // Start is called before the first frame update
     void Start()
     {
-        particleSystem = GetComponent<ParticleSystem>();
-        particleSystem.Stop();
+        particles = GetComponent<ParticleSystem>();
+        particles.Stop();
     }
 
     // Update is called once per frame
@@ -24,13 +24,13 @@ public class TriggeredParticleEmission : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
-            if (particleSystem.isStopped)
+            if (particles.isStopped)
             {
-                particleSystem.Play();
+                particles.Play();
             }
             else
             {
-                particleSystem.Stop();
+                particles.Stop();
 
             }
         }
