@@ -22,7 +22,8 @@ public class CollisionKick : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
-            gameObject.GetComponent<Rigidbody>().AddForce(forceMultiplier * collision.relativeVelocity);
+            Vector3 force = forceMultiplier * collision.relativeVelocity;
+            gameObject.GetComponent<Rigidbody>().AddForce(force);
         }
     }
 }
