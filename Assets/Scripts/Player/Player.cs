@@ -46,7 +46,6 @@ public class Player : MonoBehaviour
         if (col.gameObject.tag == "Car" || col.gameObject.tag == "Biker" || col.gameObject.tag == "Cat" || col.gameObject.tag == "Pigeon") {
 
             IsAlive = false;
-            bookIndicator = null;
             Camera.main.transform.parent = null;
 
             gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
@@ -107,14 +106,12 @@ public class Player : MonoBehaviour
 
     IEnumerator ShowGameOverScreenAfterDelay(float delay, GameOverType type) {
         IsAlive = false;
-        bookIndicator = null;
         yield return new WaitForSeconds(delay);
         ShowGameOverScreen(type);
     }
 
     void ShowGameOverScreen(GameOverType type) {
         IsAlive = false;
-        bookIndicator = null;
         GameOverScreen.gameObject.SetActive(true);
         GameOverScreen.GetComponent<Animator>().SetTrigger("Appear");
         GameOverScreen.SetSprite(type);
@@ -126,7 +123,9 @@ public class Player : MonoBehaviour
     }
 
     public void LevelComplete() {
-        PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score", 0) + (int)timer.TimerCount);
+
+        PlayerPrefs.SetInt("Score", (int)timer.TimerCount);
+
         if (PlayerPrefs.GetInt("Highscore", 0) < PlayerPrefs.GetInt("Score", 0)) {
             PlayerPrefs.SetInt("Highscore", PlayerPrefs.GetInt("Score", 0));
         }
