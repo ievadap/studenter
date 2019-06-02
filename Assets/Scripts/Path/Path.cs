@@ -19,16 +19,16 @@ using UnityEngine;
     
     void Update()
     {
-        #if UNITY_EDITOR
-        _length = GetLength();
-        for (int i = 0; i < PathPoints.Count - 1; i++) 
-        {
-            if (PathPoints[i] != null && PathPoints[i + 1]) 
-            {
-                Debug.DrawLine(PathPoints[i].position, PathPoints[i + 1].position, Color.blue);
-            }
-        }
-        #endif
+        //#if UNITY_EDITOR
+        //_length = GetLength();
+        //for (int i = 0; i < PathPoints.Count - 1; i++) 
+        //{
+        //    if (PathPoints[i] != null && PathPoints[i + 1]) 
+        //    {
+        //        Debug.DrawLine(PathPoints[i].position, PathPoints[i + 1].position, Color.blue);
+        //    }
+        //}
+        //#endif
     }
 
     private float GetLength() 

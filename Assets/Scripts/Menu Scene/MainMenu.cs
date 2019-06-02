@@ -8,10 +8,10 @@ public class MainMenu : MonoBehaviour
 {
     public AudioMixer audioMixer;
     public UnityEngine.UI.Text ScoreLabel;
-    
+
     void Start()
     {
-        ScoreLabel.text = PlayerPrefs.GetFloat("Highscore", 0).ToString();
+        ScoreLabel.text = PlayerPrefs.GetInt("Highscore", 0).ToString();
 
         audioMixer.SetFloat("musicVolume", PlayerPrefs.GetFloat("musicVolume", 0));
         audioMixer.SetFloat("sfxVolume", PlayerPrefs.GetFloat("sfxVolume", 0));
