@@ -5,8 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class DontDestroyOnLoad : MonoBehaviour
 {
-    void Start()
+    public static DontDestroyOnLoad Instance { get; private set; } = null;
+
+    void Awake()
     {
-        DontDestroyOnLoad(this);
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        else
+        {
+            Instance = this;
+        }
+        DontDestroyOnLoad(this.gameObject);
     }
 }
