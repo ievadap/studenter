@@ -13,18 +13,6 @@ public class GameOverScreen : MonoBehaviour
     public Sprite CatHit;
     public Sprite PidgeonHit;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SetSprite(GameOverType type) {
         switch (type) {
             case GameOverType.FinishWithoutBook: {
@@ -51,7 +39,7 @@ public class GameOverScreen : MonoBehaviour
                 Renderer.sprite = CatHit;
                 break;
             }
-            case GameOverType.HitByPigeon: {
+            case GameOverType.HitByPidgeon: {
                 Renderer.sprite = PidgeonHit;
                 break;
             }

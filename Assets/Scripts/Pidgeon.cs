@@ -8,17 +8,14 @@ public class Pidgeon : MonoBehaviour
     public float Speed;
     private float _t = 0f;
     private float _distance;
-
     private Vector3 _lastPos;
     private Vector3 _targetPos;
 
-    // Start is called before the first frame update
     void Start()
     {
         GetNewPos();
     }
 
-    // Update is called once per frame
     void Update()
     {
         _t += Time.deltaTime * Speed / _distance;
@@ -30,9 +27,8 @@ public class Pidgeon : MonoBehaviour
     }
 
     private void GetNewPos() {
-        _targetPos = Player.main.transform.position + new Vector3(Random.Range(-20f, 20f), Random.Range(-20f, 20f), 0f);
+        _targetPos = Player.instance.transform.position + new Vector3(Random.Range(-5f, 5f), Random.Range(-5f, 5f), 0f);
         _lastPos = transform.position;
         _distance = Vector3.Distance(_lastPos, _targetPos);
     }
-
 }

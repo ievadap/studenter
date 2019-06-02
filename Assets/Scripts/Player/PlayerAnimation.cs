@@ -5,13 +5,7 @@ using UnityEngine;
 public class PlayerAnimation : MonoBehaviour
 {
     private Vector3 _lastPos;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         if (!gameObject.GetComponent<Player>().IsAlive) {
